@@ -9,14 +9,23 @@
 import Foundation
 
 class NewSaleInteractor: NewSaleInteractorInputProtocol {
+
+    
     weak var presenter: NewSaleInteractorOutputProtocol?
-    var APIDataManager: NewSaleAPIDataManagerInputProtocol?
+    var apiDataManager: NewSaleAPIDataManagerInputProtocol?
     var localDatamanager: NewSaleLocalDataManagerInputProtocol?
 
     init() {}
     
-    func newSellProductAdded(product: Product) {
-        APIDataManager?.saveSellProduct(product: product)
-        localDatamanager?.saveSellProduct(product: product)
+    func createProduct(name: String, unit: String, price: String) {
+        let product = Product(name: name, unit: unit, price: ConversorService.getPriceFormatted(price: price))
+        apiDataManager?.saveSellProduct(product: product, completion: { (result) in
+            switch (result){
+            case .success:
+                self.presenter?.productAddSuccess(product: product)
+            default:
+                self.presenter?.productAddFailiure()
+            }
+        })
     }
 }

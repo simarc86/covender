@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class SalesAPIDataManager: SalesAPIDataManagerInputProtocol {
+    func getProductsFromAPI(completion: @escaping (_ products: [DataSnapshot]) -> Void) {
+        FirebaseService.shared.listAllProducts { (productsDataSnapshot: [DataSnapshot]) in
+            completion(productsDataSnapshot)
+        }
+    }
+    
     init() {}
 }

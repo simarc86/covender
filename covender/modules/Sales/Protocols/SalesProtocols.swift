@@ -11,6 +11,7 @@ import UIKit
 
 protocol SalesViewProtocol: class {
     var presenter: SalesPresenterProtocol? { get set }
+    func reloadData()
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
@@ -30,6 +31,7 @@ protocol SalesPresenterProtocol: class {
     var interactor: SalesInteractorInputProtocol? { get set }
     var wireFrame: SalesWireFrameProtocol? { get set }
     
+    func viewDidLoad()
     func addButtonTapped()
     /**
     * Add here your methods for communication VIEW -> PRESENTER
@@ -40,6 +42,8 @@ protocol SalesInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
+    
+    func reloadProducts(producsts:[Product])
 }
 
 protocol SalesInteractorInputProtocol: class
@@ -47,6 +51,8 @@ protocol SalesInteractorInputProtocol: class
     var presenter: SalesInteractorOutputProtocol? { get set }
     var APIDataManager: SalesAPIDataManagerInputProtocol? { get set }
     var localDatamanager: SalesLocalDataManagerInputProtocol? { get set }
+    
+    func getProducts()
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
@@ -64,6 +70,9 @@ protocol SalesAPIDataManagerInputProtocol: class
     /**
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
+    
+    func getProductsFromAPI(completion: @escaping (_ products: [DataSnapshot]) -> Void)
+    
 }
 
 protocol SalesLocalDataManagerInputProtocol: class

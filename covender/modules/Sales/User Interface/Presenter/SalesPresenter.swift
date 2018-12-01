@@ -9,6 +9,14 @@
 import Foundation
 
 class SalesPresenter: SalesPresenterProtocol, SalesInteractorOutputProtocol {
+    func reloadProducts(producsts: [Product]) {
+        interactor?.getProducts()
+    }
+    
+    func viewDidLoad() {
+        view?.reloadData()
+    }
+    
     weak var view: SalesViewProtocol?
     var interactor: SalesInteractorInputProtocol?
     var wireFrame: SalesWireFrameProtocol?

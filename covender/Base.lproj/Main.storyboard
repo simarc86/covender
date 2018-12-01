@@ -63,19 +63,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YyU-Ex-3MC" customClass="SalesTableView" customModule="covender" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBH-e0-b1c">
                                 <rect key="frame" x="321" y="588" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.9887562244661996" blue="0.96994316398698488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="0wC-gL-GOI" eventType="touchUpInside" id="Pos-jj-mJ9"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.84066505869999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.30016741071428571" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YyU-Ex-3MC" firstAttribute="leading" secondItem="eOI-pC-g2c" secondAttribute="leading" id="6ej-9n-5wh"/>
+                            <constraint firstItem="YyU-Ex-3MC" firstAttribute="bottom" secondItem="eOI-pC-g2c" secondAttribute="bottom" id="Nto-cQ-9Ch"/>
+                            <constraint firstItem="YyU-Ex-3MC" firstAttribute="top" secondItem="eOI-pC-g2c" secondAttribute="top" id="iFn-Vm-tOB"/>
+                            <constraint firstItem="YyU-Ex-3MC" firstAttribute="trailing" secondItem="eOI-pC-g2c" secondAttribute="trailing" id="ufa-1w-GPy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eOI-pC-g2c"/>
                     </view>
                     <navigationItem key="navigationItem" id="rWm-0w-dMH"/>
+                    <connections>
+                        <outlet property="tableView" destination="YyU-Ex-3MC" id="yJB-rb-Ayi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KH-h9-L4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +122,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-op-If4">
                                 <rect key="frame" x="165" y="573" width="45" height="30"/>

@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 import CoreData
+import FirebaseDatabase
 
 protocol NewSaleViewProtocol: class {
     var presenter: NewSalePresenterProtocol? { get set }
+    
+    func showProductAddSuccess()
+    func showProductAddFailiure()
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
@@ -21,9 +25,6 @@ protocol NewSaleWireFrameProtocol: class {
     static func presentNewSaleModule(fromView view: AnyObject)
     static func assembleModule() -> UIViewController
 
-    /**
-    * Add here your methods for communication PRESENTER -> WIREFRAME
-    */
 }
 
 protocol NewSalePresenterProtocol: class {
@@ -31,8 +32,8 @@ protocol NewSalePresenterProtocol: class {
     var interactor: NewSaleInteractorInputProtocol? { get set }
     var wireFrame: NewSaleWireFrameProtocol? { get set }
     
-    
-    func didAddedProduct(name: String, unit: String, price: String)
+    func sendData(name: String, unit: String, price: String)
+    func viewDidLoad()
     /**
     * Add here your methods for communication VIEW -> PRESENTER
     */
@@ -42,16 +43,18 @@ protocol NewSaleInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
+    
+    func productAddSuccess(product: Product)
+    func productAddFailiure()
 }
 
 protocol NewSaleInteractorInputProtocol: class
 {
     var presenter: NewSaleInteractorOutputProtocol? { get set }
-    var APIDataManager: NewSaleAPIDataManagerInputProtocol? { get set }
+    var apiDataManager: NewSaleAPIDataManagerInputProtocol? { get set }
     var localDatamanager: NewSaleLocalDataManagerInputProtocol? { get set }
     
-    func newSellProductAdded(product: Product)
-    
+    func createProduct(name: String, unit: String, price: String)
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
@@ -66,7 +69,7 @@ protocol NewSaleDataManagerInputProtocol: class
 
 protocol NewSaleAPIDataManagerInputProtocol: class
 {
-    func saveSellProduct(product: Product)
+    func saveSellProduct(product: Product, completion: @escaping (_ result: TypeResult) -> Void)
 
     /**
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER

@@ -12,6 +12,7 @@ import UIKit
 class SalesWireFrame: SalesWireFrameProtocol {
 
     weak var viewController: UIViewController?
+    weak var navigationController: UINavigationController?
 
     class func presentSalesModule(fromView: AnyObject) {
 
@@ -52,15 +53,15 @@ class SalesWireFrame: SalesWireFrameProtocol {
         
         interactor.presenter = presenter
         
+        wireFrame.navigationController = navigation
         wireFrame.viewController = view
         
         return navigation
     }
     
     func presentNewSaleModule(){
-//        NewSaleWireFrame.presentNewSaleModule(fromView: self.viewController!)
-        
         let moduleNewSale = NewSaleWireFrame.assembleModule()
-        self.viewController?.navigationController?.present(moduleNewSale, animated: true, completion: nil)
+        navigationController?.pushViewController(moduleNewSale, animated: true)
+
     }
 }

@@ -33,12 +33,12 @@ class NewSaleWireFrame: NewSaleWireFrameProtocol {
         presenter.wireFrame = wireFrame
         
         interactor.presenter = presenter
-        interactor.APIDataManager = APIDataManager
+        interactor.apiDataManager = APIDataManager
         interactor.localDatamanager = localDataManager
         
         wireFrame.viewController = view
         
-        return navigation
+        return view
     }
     
     class func presentNewSaleModule(fromView: AnyObject) {
@@ -57,7 +57,7 @@ class NewSaleWireFrame: NewSaleWireFrameProtocol {
         presenter.wireFrame = wireFrame
         presenter.interactor = interactor
         interactor.presenter = presenter
-        interactor.APIDataManager = APIDataManager
+        interactor.apiDataManager = APIDataManager
         interactor.localDatamanager = localDataManager
         
         fromView.navigationController??.pushViewController(view as! NewSaleViewController, animated: true)

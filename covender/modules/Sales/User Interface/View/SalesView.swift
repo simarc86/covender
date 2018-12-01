@@ -12,6 +12,15 @@ import UIKit
 class SalesViewController: UIViewController, SalesViewProtocol {
     var presenter: SalesPresenterProtocol?
     
+    @IBOutlet weak var tableView: SalesTableView!
+    
+    override func viewDidLoad() {
+        
+    }
+    
+    func reloadData(){
+        tableView.reloadData()
+    }
     
     @IBAction func addButtonTapped(_ sender: Any) {
         presenter?.addButtonTapped()

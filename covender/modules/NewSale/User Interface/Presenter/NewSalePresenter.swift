@@ -13,14 +13,22 @@ class NewSalePresenter: NewSalePresenterProtocol, NewSaleInteractorOutputProtoco
     var interactor: NewSaleInteractorInputProtocol?
     var wireFrame: NewSaleWireFrameProtocol?
 
-    init() {}
-    
-    func didAddedProduct(name: String, unit: String, price: String) {
-        let newProduct = Product(name: name, unit: unit, price: getPriceFormatted(price: price))
-        interactor?.newSellProductAdded(product: newProduct)
+    init() {
     }
     
-    func getPriceFormatted(price: String) -> Float{
-        return Float(price)!
+    func viewDidLoad(){
+        interactor?.startObserverProductAdded()
+    }
+
+    func sendData(name: String, unit: String, price: String) {
+        interactor?.createProduct(name: name, unit: unit, price: price)
+    }
+    
+    func productAddSuccess(product: Product) {
+        view?.showProductAddSuccess()
+    }
+    
+    func productAddFailiure() {
+        view?.showProductAddFailiure()
     }
 }

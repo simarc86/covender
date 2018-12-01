@@ -19,9 +19,19 @@ class NewSaleViewController: UIViewController, NewSaleViewProtocol {
 
     override func viewDidLoad() {
         print("viewDidLoad")
+        presenter?.viewDidLoad()
     }
     
     @IBAction func sellProductAddTapped(_ sender: Any) {
-        presenter?.didAddedProduct(name:nameProductTF.text!, unit:unitProductTF.text!, price:priceProductTF.text!)
+        presenter?.sendData(name: nameProductTF.text!, unit: unitProductTF.text!, price: priceProductTF.text!)
     }
+    
+    func showProductAddSuccess() {
+        print("Product Added")
+    }
+    
+    func showProductAddFailiure() {
+        print("Product Failiure")
+    }
+    
 }

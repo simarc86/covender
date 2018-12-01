@@ -8,10 +8,10 @@
 
 import Foundation
 
-class NewSaleAPIDataManager: NewSaleAPIDataManagerInputProtocol {    
-    init() {}
-    
-    func saveSellProduct(product: Product) {
-        print("saveSellProduct in Api " + product.name)
+class NewSaleAPIDataManager: NewSaleAPIDataManagerInputProtocol {
+    func saveSellProduct(product: Product, completion: @escaping (_ result: TypeResult) -> Void) {
+        FirebaseService.shared.saveProdcut(product: product) { (result) in
+            completion (result)
+        }
     }
 }

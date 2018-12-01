@@ -9,6 +9,12 @@
 import Foundation
 
 class SalesInteractor: SalesInteractorInputProtocol {
+    func getProducts() {
+        APIDataManager?.getProductsFromAPI(completion: { (products: [Product]) in
+            print(products.count)
+        })
+    }
+    
 
     weak var presenter: SalesInteractorOutputProtocol?
     var APIDataManager: SalesAPIDataManagerInputProtocol?
