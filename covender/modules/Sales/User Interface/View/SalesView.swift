@@ -16,6 +16,7 @@ class SalesViewController: UIViewController, SalesViewProtocol {
     @IBOutlet weak var tableView: SalesTableView!
     
     override func viewDidLoad() {
+        //TODO: Need init SalesTableViewController
         tableView.delegate = tableViewController
         tableView.dataSource = tableViewController
         presenter?.viewDidLoad()
