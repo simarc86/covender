@@ -7,14 +7,13 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class ProductService {
-    static func createProduct(dictionary: Dictionary<String, Any>) -> Product{
-        let name = dictionary["name"] as! String
-        let unit = dictionary["unit"] as! String
-        let price = dictionary["price"] as! Float
-
-        let product = Product(name: name, unit: unit, price: price)
+    
+    static func createProduct(data: DataSnapshot) -> Product{
+        let data2 = ConversorService.getDictionaryFromDataSnapshot(data: data as! DataSnapshot)!
+        let product = try JSONDecoder().decode(Product.self, from: data2)
         return product
     }
 }

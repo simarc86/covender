@@ -39,13 +39,16 @@ class FirebaseService {
         
     }
 
-    func listAllProducts(completion: @escaping (_ products: [DataSnapshot]) -> Void){
+    func listAllProducts(completion: @escaping (_ products: [Dictionary<String, Any>]) -> Void){
         ref.observe(.childAdded, with: { (snapshot) in
-            var newItems = [DataSnapshot]()
-            for item in snapshot.children {
-                newItems.append(item as! DataSnapshot)
+            var newItems = [Dictionary<String, Any>]()
+            snapshot.children.flatMap(Product)
+            for data in snapshot.children {
+                
+                newItems.append(ConversorService.getDictionaryFromDataSnapshot(data: data as! DataSnapshot)!)
             }
             //TODO: Convert newItem to dictionary befrore return
+            //TODO: Use codable!
             print(newItems.count)
             completion(newItems)
         })

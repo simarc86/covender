@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class ConversorService {
     static func getPriceFormatted(price: String) -> Float{
         let priceConverted = price.replacingOccurrences(of: ",", with: ".")
         return Float(priceConverted)!
+    }
+    
+    static func getDictionaryFromDataSnapshot(data: DataSnapshot) -> Dictionary<String, Any>?{
+        if let value = data.value{
+            print("\(data)")
+            return (value as! Dictionary<String, Any>)
+        }
+        return nil
     }
 }
