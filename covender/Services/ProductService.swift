@@ -8,12 +8,21 @@
 
 import Foundation
 import FirebaseDatabase
+import CodableFirebase
 
 class ProductService {
-    
-    static func createProduct(data: DataSnapshot) -> Product{
-        let data2 = ConversorService.getDictionaryFromDataSnapshot(data: data as! DataSnapshot)!
-        let product = try JSONDecoder().decode(Product.self, from: data2)
-        return product
+    static func createProduct(data: DataSnapshot) -> Product?{
+        guard let value = data.value else {
+            print("Error parsing Product")
+            return nil
+        }
+        do {
+            let product = try FirebaseDecoder().decode(Product.self, from: value)
+            print(product)
+            return product
+        } catch let error {
+            print(error)
+        }
+        return nil
     }
 }

@@ -24,7 +24,7 @@ class FirebaseService {
     
     func saveProdcut(product: Product, completion: @escaping (_ result: TypeResult) -> Void) {
         let productDB = ref.child("Product")
-        let messageDictionary : NSDictionary = ["type" : product.name, "unit" : product.unit, "price" : product.price]
+        let messageDictionary : NSDictionary = ["type" : product.type, "unit" : product.unit, "price" : product.price]
         
         productDB.childByAutoId().setValue(messageDictionary) {
             (error, ref) in
@@ -39,19 +39,16 @@ class FirebaseService {
         
     }
 
-    func listAllProducts(completion: @escaping (_ products: [Dictionary<String, Any>]) -> Void){
+    func listAllProducts(completion: @escaping (_ products: [Product]) -> Void){
         ref.observe(.childAdded, with: { (snapshot) in
-            var newItems = [Dictionary<String, Any>]()
-            snapshot.children.flatMap(Product)
+            var products = [Product]()
             for data in snapshot.children {
-                
-                newItems.append(ConversorService.getDictionaryFromDataSnapshot(data: data as! DataSnapshot)!)
+                guard let product = ProductService.createProduct(data: data as! DataSnapshot)else {
+                    return
+                }
+                products.append(product)
             }
-            //TODO: Convert newItem to dictionary befrore return
-            //TODO: Use codable!
-            print(newItems.count)
-            completion(newItems)
+            completion(products)
         })
     }
-    
 }

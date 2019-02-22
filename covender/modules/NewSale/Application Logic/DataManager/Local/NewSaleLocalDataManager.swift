@@ -14,6 +14,6 @@ class NewSaleLocalDataManager: NewSaleLocalDataManagerInputProtocol {
     init() {}
 
     func saveSellProduct(product: Product) {
-        print("saveSellProduct in local " + product.name)
+        print("saveSellProduct in local " + product.type)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Product: Codable {
-    var name: String
+    var type: String
     var unit: String
     var price: Float
 }

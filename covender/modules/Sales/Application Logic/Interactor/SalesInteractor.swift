@@ -7,18 +7,18 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class SalesInteractor: SalesInteractorInputProtocol {
-    func getProducts() {
-        APIDataManager?.getProductsFromAPI(completion: { (products: [Product]) in
-            print(products.count)
-        })
-    }
-    
-
     weak var presenter: SalesInteractorOutputProtocol?
-    var APIDataManager: SalesAPIDataManagerInputProtocol?
+    var apiDataManager: SalesAPIDataManagerInputProtocol?
     var localDatamanager: SalesLocalDataManagerInputProtocol?
 
     init() {}
+
+    func getProducts() {
+        apiDataManager?.getProductsFromAPI { (products: [Product]) in
+            self.presenter?.reloadProducts(producsts: products)
+        }
+    }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 protocol SalesViewProtocol: class {
     var presenter: SalesPresenterProtocol? { get set }
@@ -18,7 +19,6 @@ protocol SalesViewProtocol: class {
 }
 
 protocol SalesWireFrameProtocol: class {
-    static func presentSalesModule(fromView view: AnyObject)
     static func assembleModule() -> UIViewController
     func presentNewSaleModule()
     /**
@@ -49,10 +49,11 @@ protocol SalesInteractorOutputProtocol: class {
 protocol SalesInteractorInputProtocol: class
 {
     var presenter: SalesInteractorOutputProtocol? { get set }
-    var APIDataManager: SalesAPIDataManagerInputProtocol? { get set }
+    var apiDataManager: SalesAPIDataManagerInputProtocol? { get set }
     var localDatamanager: SalesLocalDataManagerInputProtocol? { get set }
     
     func getProducts()
+
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */
@@ -71,8 +72,7 @@ protocol SalesAPIDataManagerInputProtocol: class
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
     
-    func getProductsFromAPI(completion: @escaping (_ products: [DataSnapshot]) -> Void)
-    
+    func getProductsFromAPI(completion: @escaping (_ products: [Product]) -> Void)
 }
 
 protocol SalesLocalDataManagerInputProtocol: class

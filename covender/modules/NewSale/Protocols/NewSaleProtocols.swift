@@ -55,6 +55,7 @@ protocol NewSaleInteractorInputProtocol: class
     var localDatamanager: NewSaleLocalDataManagerInputProtocol? { get set }
     
     func createProduct(name: String, unit: String, price: String)
+    func startObserverProductAdded()
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
     */

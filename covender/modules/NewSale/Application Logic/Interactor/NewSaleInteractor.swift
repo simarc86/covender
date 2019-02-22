@@ -18,7 +18,7 @@ class NewSaleInteractor: NewSaleInteractorInputProtocol {
     init() {}
     
     func createProduct(name: String, unit: String, price: String) {
-        let product = Product(name: name, unit: unit, price: ConversorService.getPriceFormatted(price: price))
+        let product = Product(type: name, unit: unit, price: ConversorService.getPriceFormatted(price: price))
         apiDataManager?.saveSellProduct(product: product, completion: { (result) in
             switch (result){
             case .success:
@@ -27,5 +27,9 @@ class NewSaleInteractor: NewSaleInteractorInputProtocol {
                 self.presenter?.productAddFailiure()
             }
         })
+    }
+    
+    func startObserverProductAdded(){
+        //TODO: implement this
     }
 }

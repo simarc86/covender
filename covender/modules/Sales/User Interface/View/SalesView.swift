@@ -11,11 +11,14 @@ import UIKit
 
 class SalesViewController: UIViewController, SalesViewProtocol {
     var presenter: SalesPresenterProtocol?
-    
+    let tableViewController: SalesTableViewController = SalesTableViewController()
+
     @IBOutlet weak var tableView: SalesTableView!
     
     override func viewDidLoad() {
-        
+        tableView.delegate = tableViewController
+        tableView.dataSource = tableViewController
+        presenter?.viewDidLoad()
     }
     
     func reloadData(){
