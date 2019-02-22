@@ -1,0 +1,6 @@
+framework module TableViewKit {
+  umbrella header "TableViewKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

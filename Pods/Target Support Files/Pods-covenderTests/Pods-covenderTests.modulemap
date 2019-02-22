@@ -1,0 +1,6 @@
+framework module Pods_covenderTests {
+  umbrella header "Pods-covenderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
