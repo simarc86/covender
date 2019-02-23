@@ -10,6 +10,7 @@
 		3CB686D07AA20DC7DB49B659 /* Pods_covenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF304BFA53039AC61041E4EA /* Pods_covenderTests.framework */; };
 		7BAC203C33A0173E49749F68 /* Pods_covender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB679C2C3FE0518F108CF18 /* Pods_covender.framework */; };
 		C6252DB220DAAA9DD0A20CCB /* Pods_covenderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FE8282378767DAF7947B6 /* Pods_covenderUITests.framework */; };
+		C914D9242221825300550517 /* ProdcutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914D9232221825300550517 /* ProdcutTableViewCell.swift */; };
 		D0012C5C218D7FAE00E3D6D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0012C5B218D7FAE00E3D6D0 /* GoogleService-Info.plist */; };
 		D07FAEEA21B2A25D00E42BAA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FAEE921B2A25D00E42BAA /* FirebaseService.swift */; };
 		D07FAEEC21B2AAA000E42BAA /* ConversorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FAEEB21B2AAA000E42BAA /* ConversorService.swift */; };
@@ -86,6 +87,7 @@
 		693FE8282378767DAF7947B6 /* Pods_covenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		779A8BB7A9FEB190274CE60F /* Pods-covenderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-covenderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-covenderTests/Pods-covenderTests.release.xcconfig"; sourceTree = "<group>"; };
 		AFB679C2C3FE0518F108CF18 /* Pods_covender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_covender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C914D9232221825300550517 /* ProdcutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdcutTableViewCell.swift; sourceTree = "<group>"; };
 		D0012C5B218D7FAE00E3D6D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D07FAEE921B2A25D00E42BAA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		D07FAEEB21B2AAA000E42BAA /* ConversorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversorService.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		D08FA2FB218CBE570001FD56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C914D9232221825300550517 /* ProdcutTableViewCell.swift */,
 				D08FA2FC218CBE570001FD56 /* SalesView.swift */,
 				D07FAEEF21B2E02700E42BAA /* SalesTableView.swift */,
 				D07FAEF121B2E0AB00E42BAA /* SalesTableViewController.swift */,
@@ -894,6 +897,7 @@
 				D07FAEEA21B2A25D00E42BAA /* FirebaseService.swift in Sources */,
 				D08FA2C4218CA5540001FD56 /* LoginAPIDataManager.swift in Sources */,
 				D08FA2DF218CAC330001FD56 /* PurchasesAPIDataManager.swift in Sources */,
+				C914D9242221825300550517 /* ProdcutTableViewCell.swift in Sources */,
 				D09CA5EE218CCB0D00B84BF9 /* NewSaleAPIDataManager.swift in Sources */,
 				D08FA300218CBE570001FD56 /* SalesLocalDataManager.swift in Sources */,
 				D07FAEF421B2E80500E42BAA /* ProductService.swift in Sources */,

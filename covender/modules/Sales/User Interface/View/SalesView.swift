@@ -40,8 +40,10 @@ extension SalesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productSalesCell", for: indexPath)
-        cell.textLabel?.text = presenter?.products[indexPath.row].type
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productSalesCell", for: indexPath) as! ProdcutTableViewCell
+        cell.typeLabel.text = presenter?.products[indexPath.row].type
+        cell.priceLabel.text = String((presenter?.products[indexPath.row].price)!) + "€"
+        cell.unitLabel.text = presenter?.products[indexPath.row].unit
         return cell
     }
     
