@@ -11,7 +11,9 @@ target 'covender' do
   pod 'Firebase/Database'
   pod 'TableViewKit'
   pod 'CodableFirebase'
-
+  pod 'MaterialComponents/TextFields'
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Buttons+ButtonThemer'
 
   target 'covenderTests' do
     inherit! :search_paths
