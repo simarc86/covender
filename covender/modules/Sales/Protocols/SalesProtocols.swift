@@ -19,6 +19,8 @@ protocol SalesViewProtocol: class {
 }
 
 protocol SalesWireFrameProtocol: class {
+    var navigationController: UINavigationController? { get set }
+    var viewController: UIViewController?{ get set }
     static func assembleModule() -> UIViewController
     func presentNewSaleModule()
     /**
@@ -30,8 +32,10 @@ protocol SalesPresenterProtocol: class {
     var view: SalesViewProtocol? { get set }
     var interactor: SalesInteractorInputProtocol? { get set }
     var wireFrame: SalesWireFrameProtocol? { get set }
-    
+    var products: [Product] { get }
+
     func viewDidLoad()
+    func viewWillAppear()
     func addButtonTapped()
     /**
     * Add here your methods for communication VIEW -> PRESENTER
@@ -51,8 +55,8 @@ protocol SalesInteractorInputProtocol: class
     var presenter: SalesInteractorOutputProtocol? { get set }
     var apiDataManager: SalesAPIDataManagerInputProtocol? { get set }
     var localDatamanager: SalesLocalDataManagerInputProtocol? { get set }
-    
-    func getProducts()
+    var products: [Product] { get }
+    func fetchProducts()
 
     /**
     * Add here your methods for communication PRESENTER -> INTERACTOR
@@ -72,7 +76,7 @@ protocol SalesAPIDataManagerInputProtocol: class
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
     
-    func getProductsFromAPI(completion: @escaping (_ products: [Product]) -> Void)
+    func fetchProducts(completion: @escaping (_ products: [Product]) -> Void)
 }
 
 protocol SalesLocalDataManagerInputProtocol: class

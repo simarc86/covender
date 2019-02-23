@@ -24,6 +24,7 @@ protocol NewSaleViewProtocol: class {
 protocol NewSaleWireFrameProtocol: class {
     static func presentNewSaleModule(fromView view: AnyObject)
     static func assembleModule() -> UIViewController
+    func closeModule()
 
 }
 

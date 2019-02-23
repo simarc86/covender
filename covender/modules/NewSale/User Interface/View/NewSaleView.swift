@@ -28,6 +28,7 @@ class NewSaleViewController: UIViewController, NewSaleViewProtocol {
     
     func showProductAddSuccess() {
         print("Product Added")
+        
     }
     
     func showProductAddFailiure() {

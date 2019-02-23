@@ -10,10 +10,14 @@ import Foundation
 import FirebaseDatabase
 
 class SalesAPIDataManager: SalesAPIDataManagerInputProtocol {
+    var fetching: Bool = false
+    
     init() {}
     
-    func getProductsFromAPI(completion: @escaping (_ products: [Product]) -> Void) {
+    func fetchProducts(completion: @escaping (_ products: [Product]) -> Void) {
+        fetching = true
         FirebaseService.shared.listAllProducts { (products: [Product]) in
+            self.fetching = false
             completion(products)
         }
     }

@@ -23,9 +23,7 @@ class NewSaleWireFrame: NewSaleWireFrameProtocol {
         let wireFrame = NewSaleWireFrame()
         let APIDataManager: NewSaleAPIDataManagerInputProtocol = NewSaleAPIDataManager()
         let localDataManager: NewSaleLocalDataManagerInputProtocol = NewSaleLocalDataManager()
-        
-        let navigation = UINavigationController(rootViewController: view)
-        
+                
         view.presenter = presenter
         
         presenter.view = view
@@ -61,5 +59,9 @@ class NewSaleWireFrame: NewSaleWireFrameProtocol {
         interactor.localDatamanager = localDataManager
         
         fromView.navigationController??.pushViewController(view as! NewSaleViewController, animated: true)
+    }
+    
+    func closeModule() {
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }

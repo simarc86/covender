@@ -12,12 +12,18 @@ class SalesPresenter: SalesPresenterProtocol, SalesInteractorOutputProtocol {
     weak var view: SalesViewProtocol?
     var interactor: SalesInteractorInputProtocol?
     var wireFrame: SalesWireFrameProtocol?
-
+    var products: [Product]{
+        get{
+            return (interactor?.products)!
+        }
+    }
     init() {}
     
     func viewDidLoad() {
-        view?.reloadData()
-        interactor?.getProducts()
+    }
+    
+    func viewWillAppear(){
+        interactor?.fetchProducts()
     }
     
     func addButtonTapped(){

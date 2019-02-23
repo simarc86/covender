@@ -34,6 +34,8 @@ class SalesWireFrame: SalesWireFrameProtocol {
         interactor.presenter = presenter
         interactor.apiDataManager = apiDataManager
         interactor.localDatamanager = localDataManager
+        wireFrame.navigationController = navigation
+        wireFrame.viewController = view
         
         return navigation
     }
@@ -41,6 +43,5 @@ class SalesWireFrame: SalesWireFrameProtocol {
     func presentNewSaleModule(){
         let moduleNewSale = NewSaleWireFrame.assembleModule()
         navigationController?.pushViewController(moduleNewSale, animated: true)
-
     }
 }

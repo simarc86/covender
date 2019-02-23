@@ -26,6 +26,7 @@ class NewSalePresenter: NewSalePresenterProtocol, NewSaleInteractorOutputProtoco
     
     func productAddSuccess(product: Product) {
         view?.showProductAddSuccess()
+        wireFrame?.closeModule()
     }
     
     func productAddFailiure() {
