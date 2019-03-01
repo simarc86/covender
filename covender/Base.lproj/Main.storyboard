@@ -107,10 +107,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="light" textContentType="email"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aic-ZC-Tcs" customClass="MDCButton">
+                                <rect key="frame" x="16" y="621" width="343" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HzK-gt-xjV" firstAttribute="width" secondItem="VMb-du-jvL" secondAttribute="width" id="2mr-sr-c8C"/>
+                            <constraint firstItem="JwD-LN-pOq" firstAttribute="trailing" secondItem="Aic-ZC-Tcs" secondAttribute="trailing" constant="16" id="9vm-2l-d2l"/>
+                            <constraint firstItem="Aic-ZC-Tcs" firstAttribute="leading" secondItem="JwD-LN-pOq" secondAttribute="leading" constant="16" id="E42-tv-2rc"/>
                             <constraint firstItem="6AF-vh-9Fc" firstAttribute="leading" secondItem="JwD-LN-pOq" secondAttribute="leading" constant="16" id="Ex3-ex-hff"/>
                             <constraint firstItem="iUm-jD-rpb" firstAttribute="centerY" secondItem="fkS-c4-tK7" secondAttribute="centerY" id="IpY-Cl-usZ"/>
                             <constraint firstItem="6AF-vh-9Fc" firstAttribute="top" secondItem="JwD-LN-pOq" secondAttribute="top" constant="32" id="IvN-bX-Vqa"/>
@@ -120,6 +126,7 @@
                             <constraint firstItem="fkS-c4-tK7" firstAttribute="leading" secondItem="8fV-dV-hxl" secondAttribute="leading" id="c2o-rF-m4q"/>
                             <constraint firstItem="HzK-gt-xjV" firstAttribute="centerY" secondItem="8fV-dV-hxl" secondAttribute="centerY" id="c5M-bE-MDr"/>
                             <constraint firstItem="VMb-du-jvL" firstAttribute="leading" secondItem="6AF-vh-9Fc" secondAttribute="trailing" constant="16" id="dbt-pO-KWM"/>
+                            <constraint firstItem="JwD-LN-pOq" firstAttribute="bottom" secondItem="Aic-ZC-Tcs" secondAttribute="bottom" constant="16" id="kqL-tz-OHF"/>
                             <constraint firstItem="iUm-jD-rpb" firstAttribute="width" secondItem="fkS-c4-tK7" secondAttribute="width" id="nOm-Rm-5TD"/>
                             <constraint firstItem="JwD-LN-pOq" firstAttribute="trailing" secondItem="VMb-du-jvL" secondAttribute="trailing" constant="16" id="pW9-XX-Coa"/>
                             <constraint firstItem="8fV-dV-hxl" firstAttribute="width" secondItem="6AF-vh-9Fc" secondAttribute="width" id="pfm-Ln-LuX"/>
@@ -132,6 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="JwD-LN-pOq"/>
                     </view>
                     <connections>
+                        <outlet property="acceptButton" destination="Aic-ZC-Tcs" id="MYb-7B-AJj"/>
                         <outlet property="confirm" destination="iUm-jD-rpb" id="Rth-KG-4w6"/>
                         <outlet property="email" destination="8fV-dV-hxl" id="p5z-ZZ-Kfk"/>
                         <outlet property="lastName" destination="VMb-du-jvL" id="QaA-jU-Ndv"/>
