@@ -12,11 +12,12 @@ struct Product: Identifiable {
     var id: String = UUID().uuidString
     var name: String
     var price: Float
+    var urlToImage: String?
 }
 
 #if DEBUG
 let testDataProducts = [
-    Product(name: "Palets", price: 5.0),
+    Product(name: "Palets", price: 5.0, urlToImage: testDataUrlImage.urlString),
     Product(name: "Cajas", price: 1.0)
 ]
 #endif

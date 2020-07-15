@@ -13,9 +13,7 @@ struct ProductCell: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "circle")
-                .resizable()
-                .frame(width: 20, height: 20, alignment: .leading)
+            UrlImageView(urlString: product.urlToImage)
             Text(product.name)
             Spacer()
             Text(product.price.debugDescription)
