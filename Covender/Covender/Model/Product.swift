@@ -18,6 +18,6 @@ struct Product: Identifiable {
 #if DEBUG
 let testDataProducts = [
     Product(name: "Palets", price: 5.0, urlToImage: testDataUrlImage.urlString),
-    Product(name: "Cajas", price: 1.0)
+    Product(name: "Cajas", price: 1.0, urlToImage: "https://www.ikea.com/es/es/images/products/knagglig-box__0711003_PE727883_S5.JPG?f=xxxs")
 ]
 #endif

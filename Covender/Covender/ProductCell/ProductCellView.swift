@@ -8,15 +8,14 @@
 
 import SwiftUI
 
-struct ProductCell: View {
-    let product: Product
-    
+struct ProductCellView: View {
+    let viewModel: ProductCellViewModel
     var body: some View {
         HStack {
-            UrlImageView(urlString: product.urlToImage)
-            Text(product.name)
+            UrlImageView(urlString: viewModel.urlImage)
+            Text(viewModel.name)
             Spacer()
-            Text(product.price.debugDescription)
+            Text(viewModel.price)
         }
     }
 }

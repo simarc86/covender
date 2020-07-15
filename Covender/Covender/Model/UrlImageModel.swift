@@ -19,6 +19,10 @@ class UrlImageModel: ObservableObject {
     }
     
     func loadImage() {
+        loadImageFromUrl()
+    }
+    
+    func loadImageFromUrl() {
         guard let urlString = urlString, let url = URL(string: urlString) else {
             return
         }
@@ -45,7 +49,6 @@ class UrlImageModel: ObservableObject {
         }
     }
 }
-
 
 #if DEBUG
 let testDataUrlImage = UrlImageModel(urlString: "https://metrecubic.com/wp-content/uploads/2017/09/plaet-cajas.png")

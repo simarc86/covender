@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ProductListView: View {
-    let products = testDataProducts
+    var viewModel:ProductListViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                List(products) { product in
-                    ProductCell(product: product)
+                List(viewModel.products) { product in
+                    ProductCellView(viewModel: ProductCellViewModel(model: ProductCellModel(product: product)))
                 }
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     HStack {
@@ -33,6 +33,7 @@ struct ProductListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView()
+        ProductListView(viewModel: ProductListViewModel(model: ProductListModel(products: testDataProducts))
+)
     }
 }
