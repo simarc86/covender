@@ -15,7 +15,7 @@ struct ProductListView: View {
         NavigationView {
             VStack {
                 List(viewModel.products) { product in
-                    ProductCellView(viewModel: ProductCellViewModel(model: ProductCellModel(product: product)))
+                    ProductCellBuilder.build(data: product)
                 }
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     HStack {
