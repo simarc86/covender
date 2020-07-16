@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ProductCellView: View {
     @ObservedObject var viewModel: ProductCellViewModel
+    
+//    var onCommit: (Product) -> (Void) = { _ in }
+    
     var body: some View {
         HStack {
             UrlImageView(urlString: viewModel.urlImage)

@@ -8,7 +8,7 @@ target 'Covender' do
   # Pods for Covender
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
-
+  pod 'Firebase/Auth'
 
   target 'CovenderTests' do
     inherit! :search_paths

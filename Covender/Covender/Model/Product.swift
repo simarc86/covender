@@ -24,5 +24,4 @@ testDataProduct,
 Product(name: "Cajas", description:"Bla bla bla", price: 1.0, urlToImage: "https://www.ikea.com/es/es/images/products/knagglig-box__0711003_PE727883_S5.JPG?f=xxxs", format: "pack")
 ]
 let testDataProduct = Product(name: "Palets", description:"Bla bla bla", price: 5.0, urlToImage: testDataUrlImage.urlString,  format: "unidad")
-
 #endif
