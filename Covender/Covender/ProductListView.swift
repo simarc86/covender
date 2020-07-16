@@ -17,14 +17,10 @@ struct ProductListView: View {
                 List(viewModel.products) { product in
                     ProductCellBuilder.build(data: product)
                 }
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    HStack {
-                        Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20, alignment: .leading)
-                        Text("Add new product")
-                    }
-                }
+                
+                NavigationLink(destination: NewProductBuilder.build()) {
+                                   Text("Add new product")
+                               }.navigationBarTitle("Product")
             }
             .navigationBarTitle("Products")
         }
@@ -33,7 +29,6 @@ struct ProductListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView(viewModel: ProductListViewModel(model: ProductListModel(products: testDataProducts))
-)
+        ProductListView(viewModel: ProductListViewModel(model: ProductListModel(products: testDataProducts)))
     }
 }

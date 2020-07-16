@@ -11,15 +11,18 @@ import Foundation
 struct Product: Identifiable {
     var id: String = UUID().uuidString
     var name: String
+    var description: String
     var price: Float
     var urlToImage: String?
+    var format: String
+
 }
 
 #if DEBUG
 let testDataProducts = [
-    Product(name: "Palets", price: 5.0, urlToImage: testDataUrlImage.urlString),
-    Product(name: "Cajas", price: 1.0, urlToImage: "https://www.ikea.com/es/es/images/products/knagglig-box__0711003_PE727883_S5.JPG?f=xxxs")
+testDataProduct,
+Product(name: "Cajas", description:"Bla bla bla", price: 1.0, urlToImage: "https://www.ikea.com/es/es/images/products/knagglig-box__0711003_PE727883_S5.JPG?f=xxxs", format: "pack")
 ]
-let testDataProduct = Product(name: "Palets", price: 5.0, urlToImage: testDataUrlImage.urlString)
+let testDataProduct = Product(name: "Palets", description:"Bla bla bla", price: 5.0, urlToImage: testDataUrlImage.urlString,  format: "unidad")
 
 #endif
