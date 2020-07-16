@@ -9,17 +9,17 @@
 import Foundation
 import Combine
 
-class ProductListViewModel {
+class ProductListViewModel: ObservableObject {
     var model: ProductListModel
+    private var cancellables = Set<AnyCancellable>()
 
-    var products: [Product] {
-        get {
-            return model.products
-        }
-    }
+    @Published var productCellViewModels = [ProductCellViewModel]()
     
     init(model: ProductListModel) {
         self.model = model
+        self.productCellViewModels = model.products.map { product in
+            ProductCellViewModel(model: ProductCellModel(product: product))
+        }
     }
 }
 

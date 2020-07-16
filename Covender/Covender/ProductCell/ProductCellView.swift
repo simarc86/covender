@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProductCellView: View {
-    let viewModel: ProductCellViewModel
+    @ObservedObject var viewModel: ProductCellViewModel
     var body: some View {
         HStack {
             UrlImageView(urlString: viewModel.urlImage)

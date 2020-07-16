@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import Combine
 
-class ProductCellViewModel {
+class ProductCellViewModel: ObservableObject, Identifiable {
     private let model: ProductCellModel
+    private var cancellables = Set<AnyCancellable>()
+    @Published var product: Product
     
+    var id = ""
+
     var price: String {
         get {
             return String(model.price)
@@ -21,6 +26,7 @@ class ProductCellViewModel {
             return model.name 
         }
     }
+    
     var urlImage: String? {
         get {
             return model.urlImage
@@ -29,5 +35,13 @@ class ProductCellViewModel {
     
     init(model: ProductCellModel) {
         self.model = model
+        self.product = model.product
+        
+        $product
+            .map { product in
+                product.id
+        }
+        .assign(to: \.id, on: self)
+        .store(in: &cancellables)
     }
 }

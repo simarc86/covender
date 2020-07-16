@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ProductListView: View {
-    var viewModel:ProductListViewModel
+    @ObservedObject var viewModel:ProductListViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                List(viewModel.products) { product in
-                    ProductCellBuilder.build(data: product)
+                List(viewModel.productCellViewModels) { productCellViewModel in
+                    ProductCellBuilder.build(data: productCellViewModel.product)
                 }
                 
                 NavigationLink(destination: NewProductBuilder.build()) {
