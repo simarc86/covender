@@ -38,7 +38,7 @@ class ProductCellViewModel: ObservableObject, Identifiable {
         self.product = model.product
         
         $product
-            .map { product in
+            .compactMap { product in
                 product.id
         }
         .assign(to: \.id, on: self)

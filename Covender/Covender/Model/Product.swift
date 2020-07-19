@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Product: Identifiable {
-    var id: String = UUID().uuidString
+struct Product: Codable, Identifiable {
+    @DocumentID var id: String?
     var name: String
     var description: String
     var price: Float

@@ -10,6 +10,7 @@ import Foundation
 import Combine
 
 class ProductListViewModel: ObservableObject {
+    var productRepository = ProductRepository()
     var model: ProductListModel
     private var cancellables = Set<AnyCancellable>()
 
@@ -17,9 +18,14 @@ class ProductListViewModel: ObservableObject {
     
     init(model: ProductListModel) {
         self.model = model
-        self.productCellViewModels = model.products.map { product in
-            ProductCellViewModel(model: ProductCellModel(product: product))
+        productRepository.loadData()
+        productRepository.$products.map { products in
+            products.map { product in
+                ProductCellViewModel(model: ProductCellModel(product: product))
+            }
         }
+        .assign(to: \.productCellViewModels, on: self)
+        .store(in: &cancellables)
     }
 }
 
