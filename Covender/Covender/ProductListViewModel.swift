@@ -11,21 +11,23 @@ import Combine
 
 class ProductListViewModel: ObservableObject {
     var productRepository = ProductRepository()
-    var model: ProductListModel
     private var cancellables = Set<AnyCancellable>()
 
     @Published var productCellViewModels = [ProductCellViewModel]()
     
-    init(model: ProductListModel) {
-        self.model = model
+    init() {
+        refreshData()
+    }
+    
+    func refreshData() {
         productRepository.loadData()
         productRepository.$products.map { products in
-            products.map { product in
-                ProductCellViewModel(model: ProductCellModel(product: product))
-            }
-        }
-        .assign(to: \.productCellViewModels, on: self)
-        .store(in: &cancellables)
+                   products.map { product in
+                       ProductCellViewModel(model: ProductCellModel(product: product))
+                   }
+               }
+               .assign(to: \.productCellViewModels, on: self)
+               .store(in: &cancellables)
     }
 }
 

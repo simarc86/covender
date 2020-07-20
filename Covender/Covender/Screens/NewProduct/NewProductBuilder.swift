@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class NewProductBuilder {
-    static func build() -> NewProductView {
+    static func build(repository: ProductRepository) -> NewProductView {
         let model = NewProductModel()
-        let viewModel = NewProductViewModel(model: model)
+        let viewModel = NewProductViewModel(productRepository: repository, model: model)
         let view = NewProductView(viewModel: viewModel)
         return view
     }

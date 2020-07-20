@@ -9,7 +9,12 @@
 import Foundation
 
 class ServiceLocator {
-    static func emptyProduct() -> Product{
+    static func emptyProduct() -> Product {
         return Product(name: "", description: "", price: 0, format: "")
+    }
+    
+    static func newProduct(name: String, description: String, price: String, format: String) -> Product {
+        let priceFloat = Float(price) ?? 0.0
+        return Product(name: name, description: description, price: priceFloat, urlToImage: testDataUrlImage.urlString, format: format)
     }
 }

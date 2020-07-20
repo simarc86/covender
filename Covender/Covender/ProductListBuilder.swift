@@ -10,9 +10,7 @@ import Foundation
 
 class ProductListBuilder {
     static func build() -> ProductListView {
-        let data = testDataProducts
-        let model = ProductListModel(products: data)
-        let viewModel = ProductListViewModel(model: model)
+        let viewModel = ProductListViewModel()
         let view = ProductListView(viewModel: viewModel)        
         return view
     }

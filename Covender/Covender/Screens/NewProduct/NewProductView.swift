@@ -10,30 +10,26 @@ import SwiftUI
 
 struct NewProductView: View {
     let viewModel: NewProductViewModel
+    
+    @State var name: String = ""
+    @State var description: String = ""
+    @State var price: String = ""
+    @State var format: String = ""
+    
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+
     var body: some View {
         VStack {
-            Spacer()
             VStack {
-                HStack {
-                    Spacer()
-                    TextField("Product name", text: viewModel.$name)
-                }
-                HStack {
-                    Spacer()
-                    TextField("Description", text: viewModel.$description)
-                }
-                HStack {
-                    Spacer()
-                    TextField("Price", text: viewModel.$price)
-                }
-                HStack {
-                    Spacer()
-                    TextField("Format", text: viewModel.$format)
-                }
+                RegularTextField(placeholder: "Product name", text: $name)
+                RegularTextField(placeholder: "Description", text: $description)
+                RegularTextField(placeholder: "Price", text: $price)
+                RegularTextField(placeholder: "Format", text: $format)
             }
             Spacer()
             Button(action: {
-                self.viewModel.save()
+                self.viewModel.save(name: self.name, description: self.description, price: self.price, format: self.format)
+                self.mode.wrappedValue.dismiss()
             }) {
                 Text("Save")
             }
@@ -43,6 +39,6 @@ struct NewProductView: View {
 
 struct NewProductView_Previews: PreviewProvider {
     static var previews: some View {
-        NewProductView(viewModel: NewProductViewModel(model: NewProductModel()))
+        NewProductView(viewModel: NewProductViewModel(productRepository: ProductRepository(), model: NewProductModel()))
     }
 }

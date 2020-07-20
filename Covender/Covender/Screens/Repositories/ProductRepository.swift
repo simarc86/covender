@@ -11,12 +11,16 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class ProductRepository: ObservableObject {
+    enum Collections: String {
+        case products = "products"
+    }
+
     let db = Firestore.firestore()
     
     @Published var products = [Product]()
     
     func loadData() {
-        db.collection("products").addSnapshotListener { (querySnapshot, error) in
+        db.collection(Collections.products.rawValue).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.products = querySnapshot.documents.compactMap { document in
                     do {
@@ -28,6 +32,16 @@ class ProductRepository: ObservableObject {
                     return nil
                 }
             }
+        }
+    }
+    
+    func addProduct(_ product: Product) {
+        do {
+            let productAdded = try db.collection(Collections.products.rawValue).addDocument(from: product)
+            print("\(productAdded.documentID) added succesfully")
+        }
+        catch {
+            fatalError("Unable to encode Product. \(error.localizedDescription)")
         }
     }
 }

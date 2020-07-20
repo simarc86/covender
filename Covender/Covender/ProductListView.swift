@@ -32,7 +32,7 @@ struct ProductListView: View {
 //                        Text("Add Product")
 //                    }
 //                }
-                NavigationLink(destination: NewProductBuilder.build()) {
+                NavigationLink(destination: NewProductBuilder.build(repository: viewModel.productRepository)) {
                                    Text("Add new product")
                                }.navigationBarTitle("Product")
             }
@@ -43,6 +43,6 @@ struct ProductListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView(viewModel: ProductListViewModel(model: ProductListModel(products: testDataProducts)))
+        ProductListView(viewModel: ProductListViewModel())
     }
 }
