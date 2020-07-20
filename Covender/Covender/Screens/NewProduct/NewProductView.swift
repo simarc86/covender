@@ -19,7 +19,7 @@ struct NewProductView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 24) {
             VStack {
                 RegularTextField(placeholder: "Product name", text: $name)
                 RegularTextField(placeholder: "Description", text: $description)

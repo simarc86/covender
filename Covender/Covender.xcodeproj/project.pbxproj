@@ -146,14 +146,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		4961FAE224BE0AEA0054C376 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4961FAEC24BEFE540054C376 /* UrlImageView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		4961FAF924BF49040054C376 /* ProductCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +200,7 @@
 		4975096E24C5E11400512661 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4975097224C5F5B000512661 /* ImageView */,
 				4975096F24C5E1C500512661 /* RegularTextField */,
 				4961FAF924BF49040054C376 /* ProductCell */,
 			);
@@ -220,6 +213,14 @@
 				4975097024C5E20600512661 /* RegularTextField.swift */,
 			);
 			path = RegularTextField;
+			sourceTree = "<group>";
+		};
+		4975097224C5F5B000512661 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				4961FAEC24BEFE540054C376 /* UrlImageView.swift */,
+			);
+			path = ImageView;
 			sourceTree = "<group>";
 		};
 		499C7C6524BDFEF6006C1A6B = {
@@ -252,7 +253,6 @@
 				4961FB0324BF681E0054C376 /* Screens */,
 				4961FAE124BE0AD40054C376 /* App */,
 				4961FADE24BE09D40054C376 /* Model */,
-				4961FAE224BE0AEA0054C376 /* Views */,
 				499C7C7724BDFEF8006C1A6B /* Assets.xcassets */,
 				499C7C7C24BDFEF8006C1A6B /* LaunchScreen.storyboard */,
 				499C7C7F24BDFEF8006C1A6B /* Info.plist */,

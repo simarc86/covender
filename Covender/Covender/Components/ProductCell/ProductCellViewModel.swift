@@ -10,34 +10,32 @@ import Foundation
 import Combine
 
 class ProductCellViewModel: ObservableObject, Identifiable {
-    private let model: ProductCellModel
+    @Published var model: ProductCellModel
     private var cancellables = Set<AnyCancellable>()
-    @Published var product: Product
     
     var id = ""
 
     var price: String {
         get {
-            return String(model.price)
+            return String(model.product.price)
         }
     }
     var name: String {
         get {
-            return model.name 
+            return model.product.name
         }
     }
     
     var urlImage: String? {
         get {
-            return model.urlImage
+            return model.product.urlToImage
         }
     }
     
     init(model: ProductCellModel) {
         self.model = model
-        self.product = model.product
         
-        $product
+        model.$product
             .compactMap { product in
                 product.id
         }
