@@ -15,10 +15,11 @@ struct RegularTextField: View {
         VStack(alignment: .leading, spacing: 4 ) {
             Text(placeholder)
                 .italic()
-                .foregroundColor(Color.gray.opacity(0.8))
+                .foregroundColor(Color.black.opacity(0.8))
             TextField("", text: $text)
-                .multilineTextAlignment(.leading)
-                .foregroundColor(Color.black)
+            .multilineTextAlignment(.leading)
+            .foregroundColor(Color.black)
+            .background(Color.gray.opacity(0.2))
         }
     }
 }

@@ -18,11 +18,15 @@ struct NewArtistView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     var body: some View {
-        VStack {
+        VStack(spacing: Constant.margin(.separator)) {
             RegularTextField(placeholder: "Name", text: $name)
             RegularTextField(placeholder: "Category", text: $category)
+            .simultaneousGesture(TapGesture().onEnded {
+              print("Open category selector")
+            })
             RegularTextField(placeholder: "Description", text: $description)
             RegularTextField(placeholder: "Place", text: $place)
+            
             Spacer()
             Button(action: {
                 self.viewModel.save(name: self.name, category: self.category, description: self.description, place: self.place)
@@ -30,7 +34,10 @@ struct NewArtistView: View {
             }) {
                 Text("Save")
             }
+            .padding(.bottom, Constant.margin(.regular))
         }
+        .padding(.leading, Constant.margin(.regular))
+        .padding(.trailing, Constant.margin(.regular))
     }
 }
 

@@ -47,6 +47,7 @@
 		49A6C4E724F6AB28008ECF4C /* NewArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4E624F6AB28008ECF4C /* NewArtistViewModel.swift */; };
 		49A6C4E924F6ACF5008ECF4C /* NewArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4E824F6ACF5008ECF4C /* NewArtistModel.swift */; };
 		49A6C4EB24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4EA24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift */; };
+		49A6C4ED24F878EC008ECF4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4EC24F878EC008ECF4C /* Constant.swift */; };
 		6241EC436F069B530C2F26B5 /* Pods_Covender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195E6B2971F1EC8EB7BAF365 /* Pods_Covender.framework */; };
 		BFAE3D03EEF1FFBB74FCDE04 /* Pods_CovenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EE2374AC24459404EB8CE /* Pods_CovenderTests.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		49A6C4E624F6AB28008ECF4C /* NewArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArtistViewModel.swift; sourceTree = "<group>"; };
 		49A6C4E824F6ACF5008ECF4C /* NewArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArtistModel.swift; sourceTree = "<group>"; };
 		49A6C4EA24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTypeUserViewModel.swift; sourceTree = "<group>"; };
+		49A6C4EC24F878EC008ECF4C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		60298CD9C40EF77A8C94688C /* Pods-Covender-CovenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covender-CovenderUITests.release.xcconfig"; path = "Target Support Files/Pods-Covender-CovenderUITests/Pods-Covender-CovenderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		973F48EC49FECE02110C1BCA /* Pods_Covender_CovenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covender_CovenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998909F46F7215A468600053 /* Pods-Covender-CovenderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covender-CovenderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Covender-CovenderUITests/Pods-Covender-CovenderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				499C7C7124BDFEF6006C1A6B /* AppDelegate.swift */,
 				499C7C7324BDFEF6006C1A6B /* SceneDelegate.swift */,
 				4961FB0F24C094B60054C376 /* ServiceLocator.swift */,
+				49A6C4EC24F878EC008ECF4C /* Constant.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4961FAF824BF46000054C376 /* ProductCellViewModel.swift in Sources */,
+				49A6C4ED24F878EC008ECF4C /* Constant.swift in Sources */,
 				49A6C4E924F6ACF5008ECF4C /* NewArtistModel.swift in Sources */,
 				499C7C7224BDFEF6006C1A6B /* AppDelegate.swift in Sources */,
 				4961FAE024BE09EA0054C376 /* Product.swift in Sources */,
