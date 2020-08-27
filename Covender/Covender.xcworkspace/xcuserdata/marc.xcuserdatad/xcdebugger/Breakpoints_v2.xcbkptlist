@@ -3,4 +3,70 @@
    uuid = "4E02A1E4-5376-42FB-9EC7-98DC794F3620"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5657F338-6AB0-4226-873C-E8529D049234"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Covender/Screens/ArtistList/ArtistListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5657F338-6AB0-4226-873C-E8529D049234 - 422701e1e765d3c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Covender.ArtistListViewModel.init() -&gt; Covender.ArtistListViewModel"
+                  moduleName = "Covender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marc/Documents/Development/covender/Covender/Covender/Screens/ArtistList/ArtistListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "715">
+               </Location>
+               <Location
+                  uuid = "5657F338-6AB0-4226-873C-E8529D049234 - cafb34c84879afe1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Covender.Artist&gt;) -&gt; Swift.Array&lt;Covender.ArtistCellViewModel&gt; in Covender.ArtistListViewModel.init() -&gt; Covender.ArtistListViewModel"
+                  moduleName = "Covender"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marc/Documents/Development/covender/Covender/Covender/Screens/ArtistList/ArtistListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4613856-09CE-4E14-8473-11F0D3A2C12D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Covender/Screens/ArtistList/ArtistListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
