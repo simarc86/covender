@@ -41,6 +41,13 @@
 		49A6C4E924F6ACF5008ECF4C /* NewArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4E824F6ACF5008ECF4C /* NewArtistModel.swift */; };
 		49A6C4EB24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4EA24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift */; };
 		49A6C4ED24F878EC008ECF4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4EC24F878EC008ECF4C /* Constant.swift */; };
+		49A6C4EF24FD93FA008ECF4C /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4EE24FD93FA008ECF4C /* CategoriesRepository.swift */; };
+		49A6C4F124FD9547008ECF4C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4F024FD9547008ECF4C /* Repository.swift */; };
+		49A6C4F324FD9972008ECF4C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4F224FD9972008ECF4C /* Category.swift */; };
+		49A6C4F824FD9F4D008ECF4C /* CategoriesSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4F724FD9F4D008ECF4C /* CategoriesSelectorView.swift */; };
+		49A6C4FA24FD9FBB008ECF4C /* CategoriesSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4F924FD9FBB008ECF4C /* CategoriesSelectorViewModel.swift */; };
+		49A6C4FC24FDA054008ECF4C /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4FB24FDA054008ECF4C /* CategoryCellView.swift */; };
+		49A6C4FE24FDA068008ECF4C /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6C4FD24FDA068008ECF4C /* CategoryCellViewModel.swift */; };
 		6241EC436F069B530C2F26B5 /* Pods_Covender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195E6B2971F1EC8EB7BAF365 /* Pods_Covender.framework */; };
 		BFAE3D03EEF1FFBB74FCDE04 /* Pods_CovenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204EE2374AC24459404EB8CE /* Pods_CovenderTests.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +112,13 @@
 		49A6C4E824F6ACF5008ECF4C /* NewArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArtistModel.swift; sourceTree = "<group>"; };
 		49A6C4EA24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTypeUserViewModel.swift; sourceTree = "<group>"; };
 		49A6C4EC24F878EC008ECF4C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		49A6C4EE24FD93FA008ECF4C /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
+		49A6C4F024FD9547008ECF4C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		49A6C4F224FD9972008ECF4C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		49A6C4F724FD9F4D008ECF4C /* CategoriesSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSelectorView.swift; sourceTree = "<group>"; };
+		49A6C4F924FD9FBB008ECF4C /* CategoriesSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSelectorViewModel.swift; sourceTree = "<group>"; };
+		49A6C4FB24FDA054008ECF4C /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
+		49A6C4FD24FDA068008ECF4C /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		60298CD9C40EF77A8C94688C /* Pods-Covender-CovenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covender-CovenderUITests.release.xcconfig"; path = "Target Support Files/Pods-Covender-CovenderUITests/Pods-Covender-CovenderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		973F48EC49FECE02110C1BCA /* Pods_Covender_CovenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covender_CovenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		998909F46F7215A468600053 /* Pods-Covender-CovenderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covender-CovenderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Covender-CovenderUITests/Pods-Covender-CovenderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +180,7 @@
 				4961FADF24BE09EA0054C376 /* Product.swift */,
 				4961FAEE24BF06EB0054C376 /* UrlImageModel.swift */,
 				493B755E24C7976E004E3C5B /* Artist.swift */,
+				49A6C4F224FD9972008ECF4C /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +222,8 @@
 			children = (
 				4975096A24C4412200512661 /* ProductRepository.swift */,
 				493B756A24C7A279004E3C5B /* ArtistRepository.swift */,
+				49A6C4EE24FD93FA008ECF4C /* CategoriesRepository.swift */,
+				49A6C4F024FD9547008ECF4C /* Repository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -214,6 +231,7 @@
 		4975096E24C5E11400512661 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49A6C4F424FD9D85008ECF4C /* Categories */,
 				493B756524C79D6C004E3C5B /* ArtistCell */,
 				4975097224C5F5B000512661 /* ImageView */,
 				4975096F24C5E1C500512661 /* RegularTextField */,
@@ -322,6 +340,17 @@
 				49A6C4E824F6ACF5008ECF4C /* NewArtistModel.swift */,
 			);
 			path = NewArtist;
+			sourceTree = "<group>";
+		};
+		49A6C4F424FD9D85008ECF4C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				49A6C4F724FD9F4D008ECF4C /* CategoriesSelectorView.swift */,
+				49A6C4F924FD9FBB008ECF4C /* CategoriesSelectorViewModel.swift */,
+				49A6C4FB24FDA054008ECF4C /* CategoryCellView.swift */,
+				49A6C4FD24FDA068008ECF4C /* CategoryCellViewModel.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		7566F4C90CAA0094F0E1F122 /* Pods */ = {
@@ -587,16 +616,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A6C4FE24FDA068008ECF4C /* CategoryCellViewModel.swift in Sources */,
 				4961FAF824BF46000054C376 /* ProductCellViewModel.swift in Sources */,
 				49A6C4ED24F878EC008ECF4C /* Constant.swift in Sources */,
 				49A6C4E924F6ACF5008ECF4C /* NewArtistModel.swift in Sources */,
+				49A6C4EF24FD93FA008ECF4C /* CategoriesRepository.swift in Sources */,
 				499C7C7224BDFEF6006C1A6B /* AppDelegate.swift in Sources */,
 				4961FAE024BE09EA0054C376 /* Product.swift in Sources */,
 				49A6C4DE24F69D01008ECF4C /* SwitchTypeUserView.swift in Sources */,
+				49A6C4F124FD9547008ECF4C /* Repository.swift in Sources */,
 				493B756B24C7A279004E3C5B /* ArtistRepository.swift in Sources */,
 				4961FAFE24BF4D920054C376 /* ProductCellModel.swift in Sources */,
 				49A6C4E524F6A6DB008ECF4C /* NewArtistBuilder.swift in Sources */,
+				49A6C4F324FD9972008ECF4C /* Category.swift in Sources */,
 				493B755F24C7976E004E3C5B /* Artist.swift in Sources */,
+				49A6C4FA24FD9FBB008ECF4C /* CategoriesSelectorViewModel.swift in Sources */,
 				493B756924C79DC0004E3C5B /* ArtistCellViewModel.swift in Sources */,
 				4961FB0224BF66DC0054C376 /* ProductCellBuilder.swift in Sources */,
 				493B756724C79D95004E3C5B /* ArtistCellView.swift in Sources */,
@@ -607,9 +641,11 @@
 				4975097124C5E20600512661 /* RegularTextField.swift in Sources */,
 				49A6C4EB24F6BCED008ECF4C /* SwitchTypeUserViewModel.swift in Sources */,
 				493B756424C79CCA004E3C5B /* ArtistListViewModel.swift in Sources */,
+				49A6C4F824FD9F4D008ECF4C /* CategoriesSelectorView.swift in Sources */,
 				49A6C4E024F69E3D008ECF4C /* ArtistListBuilder.swift in Sources */,
 				49A6C4E724F6AB28008ECF4C /* NewArtistViewModel.swift in Sources */,
 				4961FAEF24BF06EB0054C376 /* UrlImageModel.swift in Sources */,
+				49A6C4FC24FDA054008ECF4C /* CategoryCellView.swift in Sources */,
 				4961FAE624BE13200054C376 /* ProductCellView.swift in Sources */,
 				4961FB1024C094B60054C376 /* ServiceLocator.swift in Sources */,
 				499C7C7424BDFEF6006C1A6B /* SceneDelegate.swift in Sources */,

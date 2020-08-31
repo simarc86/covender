@@ -10,20 +10,30 @@ import SwiftUI
 
 struct NewArtistView: View {
     let viewModel: NewArtistViewModel
+    
     @State var name: String = ""
     @State var category: String = ""
     @State var description: String = ""
     @State var place: String = ""
-    
+    @State private var isCategoryPresented = false
+
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
 
     var body: some View {
         VStack(spacing: Constant.margin(.separator)) {
             RegularTextField(placeholder: "Name", text: $name)
             RegularTextField(placeholder: "Category", text: $category)
-            .simultaneousGesture(TapGesture().onEnded {
-              print("Open category selector")
+                .simultaneousGesture(TapGesture().onEnded {
+                print("Open category selector")
+                self.isCategoryPresented.toggle()
+
             })
+            .sheet(isPresented: $isCategoryPresented, content: {
+                CategoriesSelectorView(viewModel: CategoriesSelectorViewModel())
+            })
+            
+            
             RegularTextField(placeholder: "Description", text: $description)
             RegularTextField(placeholder: "Place", text: $place)
             

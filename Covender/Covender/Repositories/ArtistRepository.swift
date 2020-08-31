@@ -10,15 +10,13 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class ArtistRepository: ObservableObject {
-    enum Collections: String {
-        case artists = "artists"
-    }
+class ArtistRepository: Repository {
     @Published var artists = [Artist]()
-    private var db = Firestore.firestore()
+    internal var db = Firestore.firestore()
+    internal let collection = "artists"
 
     func loadData() {
-        db.collection(Collections.artists.rawValue).addSnapshotListener { (querySnapshot, error) in
+        db.collection(collection).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.artists = querySnapshot.documents.compactMap { document in
                     do {
@@ -35,7 +33,7 @@ class ArtistRepository: ObservableObject {
 
     func addArtist(artist: Artist) {
         do {
-            let artistAdded = try db.collection(Collections.artists.rawValue).addDocument(from: artist)
+            let artistAdded = try db.collection(collection).addDocument(from: artist)
             print("\(artistAdded.documentID) added succesfully")
         }
         catch {
